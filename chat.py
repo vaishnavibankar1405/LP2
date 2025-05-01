@@ -111,3 +111,95 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""
+def chatbot():
+    print("Welcome to the Student Support Chatbot!")
+    print("Type 'exit' to end the conversation.\n")
+
+    while True:
+        user_input = input("You: ").lower()
+
+        if user_input == "exit":
+            print("Chatbot: Goodbye! Have a great day.")
+            break
+        elif "available courses" in user_input or "courses" in user_input:
+            print("Chatbot: The available courses are: Computer Science, Data Science, AI & ML, Cybersecurity.")
+        elif "course schedule" in user_input or "schedule" in user_input:
+            print("Chatbot: Classes run from Monday to Friday, 9 AM to 4 PM.")
+        elif "university location" in user_input or "location" in user_input:
+            print("Chatbot: The university is located at MG Road, Pune, Maharashtra.")
+        else:
+            print("Chatbot: Sorry, I didn't understand that. Please ask about courses, schedule, or location.")
+
+# Run the chatbot
+chatbot()
+
+import random
+
+def food_ordering_chatbot():
+    menu = {
+        "Pizza": 250,
+        "Burger": 150,
+        "Pasta": 200,
+        "Fries": 100,
+        "Coke": 50
+    }
+
+    slogans = [
+        "Savor the flavor, delivered to your door!",
+        "Your hunger, our mission!",
+        "Fast. Fresh. Fantastic!",
+        "Zomato: Bringing joy, one meal at a time!",
+        "Taste that tells a story."
+    ]
+
+    print("Welcome to Zomato Food Bot!")
+    print("Here is our menu:\n")
+    for item, price in menu.items():
+        print(f"{item}: ₹{price}")
+
+    print("\nType the name of the food item you want to order.")
+    print("Type 'done' when you finish ordering.\n")
+
+    order = []
+    while True:
+        choice = input("You: ").title()
+        if choice == "Done":
+            break
+        elif choice in menu:
+            order.append(choice)
+            print(f"Chatbot: {choice} added to your order.")
+        else:
+            print("Chatbot: Item not available. Please choose from the menu.")
+
+    if not order:
+        print("Chatbot: You didn't order anything. Goodbye!")
+        return
+
+    total = sum(menu[item] for item in order)
+    print("\nChatbot: Please select your payment mode (Cash / UPI / Card):")
+    payment = input("You: ").strip().capitalize()
+
+    print("\n------ Bill Summary ------")
+    for item in order:
+        print(f"{item}: ₹{menu[item]}")
+    print(f"Total Amount: ₹{total}")
+    print(f"Payment Mode: {payment}")
+    print("--------------------------")
+
+    # Show a random slogan
+    print("\nChatbot:", random.choice(slogans))
+
+    # Delivery feedback
+    print("\nChatbot: Was your delivery on time? (yes/no)")
+    feedback = input("You: ").lower()
+    if feedback == "yes":
+        print("Chatbot: Awesome! Glad we served you well 😊")
+    else:
+        print("Chatbot: Sorry for the delay. We'll improve next time! 🙏")
+
+    print("\nChatbot: Thank you for ordering with Zomato. Enjoy your meal!")
+
+# Run the chatbot
+food_ordering_chatbot()
+"""
